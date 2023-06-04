@@ -32,31 +32,38 @@ All_lists.append(lisuntil_p)
 
 # amount
 a = 0
-amount = 0
+amount = []
 for l in All_lists[2] and All_lists[3]:
     amo = All_lists[2][a] * All_lists[3][a]
-    amount += amo
+    amount.append(amo)
     a += 1
 
-# discount 
+# # discount 
+discount = []
+z = 0
 for v in All_lists[1]:
     if v == "A" or v == "a":
-        discount = amount * 0.1 # discount for room A
+        discount1 = amount[z] * 0.1 # discount for room A
+        discount.append(discount1)
     elif v == "B" or v == "b":
-        discount = amount * 0.1 # discount for room B
+        discount2 = amount[z] * 0.1 # discount for room B
+        discount.append(discount2)
     else:
-        discount = amount * 0.1 # discount for room C
+        discount3 = amount[z] * 0.1 # discount for room C
+        discount.append(discount3)
+    z += 1
 
 # Addresses for the table
 print(f"name\ttype_room\tdays\tuntil_price\t   amount\tdiscount")
 print("-"*70)
 
 # to print the operetion
-w = 0
+w,s,q = 0,0,0
 for t in All_lists[0] and All_lists[1] and All_lists[2] and All_lists[3]:
-    print(f"{All_lists[0][w]}\t   {All_lists[1][w]}\t\t{All_lists[2][w]}\t  {All_lists[3][w]}\t  {amount}\t  {discount}")
+    print(f"{All_lists[0][w]}\t   {All_lists[1][w]}\t\t{All_lists[2][w]}\t  {All_lists[3][w]}\t  {amount[s]}\t  {discount[q]}")
     w += 1
+    s += 1
+    q += 1
 
 print("-"*70)
-
 
